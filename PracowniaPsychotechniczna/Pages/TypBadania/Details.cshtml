@@ -1,0 +1,31 @@
+﻿@page
+@model PracowniaPsychotechniczna.Pages.TypBadania.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TypBadania</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypBadania.Nazwa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TypBadania.Nazwa)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TypBadania.Cena)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TypBadania.Cena)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TypBadania.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
