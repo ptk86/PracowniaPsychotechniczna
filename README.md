@@ -12,6 +12,10 @@
 5. W Package Manager Console wpisać komendę: Update-Database (zostanie stworzona baza danych PracowniaPsychologoczna na instancji: (localdb)\mssqllocaldb)
 
 # Aby przeglądać bazę danych PracowniaPsychologiczna: #
+
+**UWAGA: ** 
+Baza danych PracowniaPsychologiczna nie będzie dostępna dopuki nie zostanie odpalona komenda Udtate-Database (punkt 5 w "Aby uruchomić")
+
 1. Wejśc do SQL Management Studio i połączyć się z serwerem (localdb)\mssqllocaldb przez Windows Authentication  
 
 LUB
@@ -23,4 +27,4 @@ LUB
 3. Po dwukliku na dodanym DataConnectionie można przeglądać tabelki w zakładce Tables.
 4. Po kliknięciu prawym przyciskiem myszy na nazwie tabelki i wybraniu "New Query" można pisać wyrażenia SQL. 
 
-UWAGA: Baza danych PracowniaPsychologiczna nie będzie dostępna dopuki nie zostanie odpalona komenda Udtate-Database (punkt 5 w "Aby uruchomić")
+
