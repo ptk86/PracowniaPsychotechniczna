@@ -12,12 +12,16 @@ Aby uruchomić:
 5. W Package Manager Console wpisać komendę: Update-Database (zostanie stworzona baza danych PracowniaPsychologoczna na instancji: (localdb)\mssqllocaldb)
 
 Aby przeglądać bazę danych PracowniaPsychologiczna:
-Wejśc do SQL Management Studio i połączyć się z serwerem (localdb)\mssqllocaldb przez Windows Authentication  
-                                    LUB
-Wejść do ServerExplorer (CTRL + W, L) z poziomu VisualStudio 2017 i dodać DataConnection. 
-W formularzu dodawania Data Connection jako Server name podać: (localdb)\mssqllocaldb
-i  jako bazę danych (Select or entrer database name) podać PracowniaPsychologiczna.
-Później trzeba kliknąć dwa razy na dodanym Data Connection'nie i można przeglądać tabelki w zakładce Tables.
-Dodatkowo po kliknięciu prawym przyciskiem myszy na nazwie tabelki i wybraniu "New Query" można pisać wyrażenia SQL. 
+1. Wejśc do SQL Management Studio i połączyć się z serwerem (localdb)\mssqllocaldb przez Windows Authentication  
+
+LUB
+
+1. Wejść do ServerExplorer (CTRL + W, L) z poziomu VisualStudio 2017 i dodać DataConnection (prawym na Data connections i "Add Data Connection"). 
+2. W formularzu dodawania Data Connection:
+A) Server Name ustawić na: (localdb)\mssqllocaldb i 
+B) jako bazę danych (Select or entrer database name) podać PracowniaPsychologiczna.
+
+3. Po dwukliku na dodanym DataConnectionie można przeglądać tabelki w zakładce Tables.
+4. Po kliknięciu prawym przyciskiem myszy na nazwie tabelki i wybraniu "New Query" można pisać wyrażenia SQL. 
 
 UWAGA: Baza danych PracowniaPsychologiczna nie będzie dostępna dopuki nie zostanie odpalona komenda Udtate-Database (punkt 5 w "Aby uruchomić")
