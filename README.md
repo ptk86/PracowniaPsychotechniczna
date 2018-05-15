@@ -18,8 +18,7 @@ LUB
 
 1. Wejść do ServerExplorer (CTRL + W, L) z poziomu VisualStudio 2017 i dodać DataConnection (prawym na Data connections i "Add Data Connection"). 
 2. W formularzu dodawania Data Connection:
-  1. Server Name ustawić na: (localdb)\mssqllocaldb i 
-  2. jako bazę danych (Select or entrer database name) podać PracowniaPsychologiczna.
+  1. Server Name ustawić na: (localdb)\mssqllocaldb 2. jako bazę danych (Select or entrer database name) podać PracowniaPsychologiczna.
 3. Po dwukliku na dodanym DataConnectionie można przeglądać tabelki w zakładce Tables.
 4. Po kliknięciu prawym przyciskiem myszy na nazwie tabelki i wybraniu "New Query" można pisać wyrażenia SQL. 
 
