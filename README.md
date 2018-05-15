@@ -1,6 +1,6 @@
 # Potrzebne narzędzia: #
 1. git dla Windows (https://git-scm.com/download/win)
-2. VisualStudio2017 (https://docs.microsoft.com/pl-pl/visualstudio/install/install-visual-studio)
+2. VisualS tudio2017 (https://docs.microsoft.com/pl-pl/visualstudio/install/install-visual-studio)
 3. LocalDb (instalowane wraz z VisualStudio 2017: https://stackoverflow.com/questions/42774739/how-to-install-localdb-2016-along-with-visual-studio-2017)
 4. opcjonalnie SQL Management Studio 2017 (https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017) - opcjonalnie bo można przeglądać bazę danych z poziomu Visual Studio 2017
 
@@ -20,7 +20,7 @@ __UWAGA:__ Baza danych PracowniaPsychologiczna nie będzie dostępna dopóki nie
 
 LUB
 
-1. Wejść do ServerExplorer (CTRL + W, L) z poziomu VisualStudio 2017 i dodać DataConnection (prawym na Data connections i "Add Data Connection"). 
+1. Wejść do Server Explorer'a (CTRL + W, L) z poziomu Visual Studio 2017 i dodać DataConnection (prawym na Data connections i "Add Data Connection"). 
 2. W formularzu dodawania Data Connection:
     1. Server Name ustawić na: (localdb)\mssqllocaldb 
     2. jako bazę danych (Select or entrer database name) podać PracowniaPsychologiczna.
