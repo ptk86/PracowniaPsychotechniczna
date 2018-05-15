@@ -13,7 +13,7 @@
 
 # Aby przeglądać/odpytywać bazę danych PracowniaPsychologiczna: #
 
-__UWAGA:__ Baza danych PracowniaPsychologiczna nie będzie dostępna dopuki nie zostanie odpalona komenda Udtate-Database (punkt 5 w "Aby uruchomić")
+__UWAGA:__ Baza danych PracowniaPsychologiczna nie będzie dostępna dopóki nie zostanie odpalona komenda Udtate-Database (punkt 5 w "Aby uruchomić")
 
 1. Wejśc do SQL Management Studio i połączyć się z serwerem (localdb)\mssqllocaldb przez Windows Authentication  
 
