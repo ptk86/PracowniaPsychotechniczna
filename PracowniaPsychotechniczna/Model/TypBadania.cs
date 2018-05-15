@@ -6,10 +6,10 @@ namespace PracowniaPsychotechniczna.Model
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Nazwa jest wymagana!")]
         public string Nazwa { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Cena jest wymagana!")]
         public decimal Cena { get; set; }
     }
 }
