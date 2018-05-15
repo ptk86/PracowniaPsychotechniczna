@@ -11,10 +11,9 @@
 4. Otowrzyć Package Manager Console (ALT + T, N, O)
 5. W Package Manager Console wpisać komendę: Update-Database (zostanie stworzona baza danych PracowniaPsychologoczna na instancji: (localdb)\mssqllocaldb)
 
-# Aby przeglądać bazę danych PracowniaPsychologiczna: #
+# Aby przeglądać/odpytywać bazę danych PracowniaPsychologiczna: #
 
-**UWAGA: ** 
-Baza danych PracowniaPsychologiczna nie będzie dostępna dopuki nie zostanie odpalona komenda Udtate-Database (punkt 5 w "Aby uruchomić")
+__UWAGA:__ Baza danych PracowniaPsychologiczna nie będzie dostępna dopuki nie zostanie odpalona komenda Udtate-Database (punkt 5 w "Aby uruchomić")
 
 1. Wejśc do SQL Management Studio i połączyć się z serwerem (localdb)\mssqllocaldb przez Windows Authentication  
 
