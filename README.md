@@ -6,10 +6,11 @@
 
 # Aby uruchomić: #
 1. Z poziomu wiersza poleceń Windows (cmd.exe) przejśc do folderu do którego zostanie skolonwana solucja
-2. Wpisać komendę: git clone https://github.com/ptk86/PracowniaPsychotechniczna.git
+2. Wpisać komendę: __git clone https://github.com/ptk86/PracowniaPsychotechniczna.git__
 3. Otworzyć solucję w VisualStudio2017
 4. Otowrzyć Package Manager Console (ALT + T, N, O)
-5. W Package Manager Console wpisać komendę: Update-Database (zostanie stworzona baza danych PracowniaPsychologoczna na instancji: (localdb)\mssqllocaldb)
+5. W Package Manager Console wpisać komendę: __Update-Database__ 
+(zostanie stworzona baza danych PracowniaPsychologoczna na instancji: (localdb)\mssqllocaldb)
 
 # Aby przeglądać/odpytywać bazę danych PracowniaPsychologiczna: #
 
