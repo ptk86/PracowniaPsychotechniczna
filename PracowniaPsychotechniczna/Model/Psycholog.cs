@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace PracowniaPsychotechniczna.Model
 {
@@ -6,10 +7,11 @@ namespace PracowniaPsychotechniczna.Model
     {
         public int Id { get; set; }
 
-        [Required]
+        [DisplayName("Imię")]
+        [Required(ErrorMessage = "Imię jest wymagane!")]
         public string Imie { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Nazwisko jest wymagane!")]
         public string Nazwisko { get; set; }
     }
 }
