@@ -1,8 +1,8 @@
 Potrzebne narzędzia:
-1. git dla Windows (https://git-scm.com/download/win)
-2. VisualStudio2017 (https://docs.microsoft.com/pl-pl/visualstudio/install/install-visual-studio)
-3. LocalDb (instalowane wraz z VisualStudio 2017: https://stackoverflow.com/questions/42774739/how-to-install-localdb-2016-along-with-visual-studio-2017)
-4. opcjonalnie SQL Management Studio 2017 (https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017) - opcjonalnie bo można przeglądać bazę danych z poziomu Visual Studio 2017
+- git dla Windows (https://git-scm.com/download/win)
+- VisualStudio2017 (https://docs.microsoft.com/pl-pl/visualstudio/install/install-visual-studio)
+- LocalDb (instalowane wraz z VisualStudio 2017: https://stackoverflow.com/questions/42774739/how-to-install-localdb-2016-along-with-visual-studio-2017)
+- opcjonalnie SQL Management Studio 2017 (https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017) - opcjonalnie bo można przeglądać bazę danych z poziomu Visual Studio 2017
 
 Aby uruchomić:
 1. Z poziomu wiersza poleceń Windows (cmd.exe) przejśc do folderu do którego zostanie skolonwana solucja
