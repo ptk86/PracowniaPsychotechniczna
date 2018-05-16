@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace PracowniaPsychotechniczna.Model
 {
@@ -10,6 +11,8 @@ namespace PracowniaPsychotechniczna.Model
         public string Nazwa { get; set; }
 
         [Required(ErrorMessage = "Cena jest wymagana!")]
-        public decimal Cena { get; set; }
+        [Range(0,1000, ErrorMessage = "Podaj wartość z przedziału <0, 100>!")]
+        [DisplayName("Cena [zł]")]
+        public int Cena { get; set; }
     }
 }
