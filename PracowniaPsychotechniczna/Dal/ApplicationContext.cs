@@ -29,5 +29,7 @@ namespace PracowniaPsychotechniczna.Dal
         public DbSet<PracowniaPsychotechniczna.Model.Psycholog> Psycholog { get; set; }
 
         public DbSet<PracowniaPsychotechniczna.Model.TypBadania> TypBadania { get; set; }
+
+        public DbSet<PracowniaPsychotechniczna.Model.Firma> Firma { get; set; }
     }
 }
