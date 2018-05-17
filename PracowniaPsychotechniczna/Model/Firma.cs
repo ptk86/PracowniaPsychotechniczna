@@ -6,13 +6,14 @@ namespace PracowniaPsychotechniczna.Model
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Nazwa jest wymagana!")]
         public string Nazwa { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Adres jest wymagany!")]
         public string Adres { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "NIP jest wymagana!")]
+        [RegularExpression(@"^\d{10}$", ErrorMessage = "NIP musi być ciągiem 10 cyfr")]
         public string Nip { get; set; }
     }
 }
