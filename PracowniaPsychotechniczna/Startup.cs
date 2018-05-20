@@ -1,4 +1,5 @@
 
+using System.Globalization;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -27,8 +28,11 @@ namespace PracowniaPsychotechniczna
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().AddFluentValidation();
+            
             services.AddTransient<IValidator<Badany>, BadanyValidatior>();
             services.AddTransient<IValidator<Firma>, FrimaValidatior>();
+
+            ValidatorOptions.LanguageManager.Culture = new CultureInfo("pl");
 
         }
 
