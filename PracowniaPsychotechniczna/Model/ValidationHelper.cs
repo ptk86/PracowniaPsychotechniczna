@@ -4,8 +4,11 @@ namespace PracowniaPsychotechniczna.Model
 {
     public class ValidationHelper
     {
-        public static bool ValidateChecksum(string toValidate, int[] factors)
+        public static bool ValidateModuloChecksum(string toValidate, int[] factors)
         {
+            if (string.IsNullOrEmpty(toValidate))
+                return false;
+
             var digits = toValidate.Select(p => int.Parse(p.ToString())).ToList();
             var sum = digits.Zip(factors, (pd, f) => pd * f).Sum();
             var modulo = sum % 10;
