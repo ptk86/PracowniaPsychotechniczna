@@ -1,7 +1,8 @@
 ﻿using FluentValidation;
 using PracowniaPsychotechniczna.Dal;
+using PracowniaPsychotechniczna.Model;
 
-namespace PracowniaPsychotechniczna.Model
+namespace PracowniaPsychotechniczna.Validator
 {
     public class FrimaValidatior : AbstractValidator<Firma>
     {

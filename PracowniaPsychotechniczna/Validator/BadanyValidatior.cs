@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using FluentValidation;
 using PracowniaPsychotechniczna.Dal;
+using PracowniaPsychotechniczna.Model;
 
-namespace PracowniaPsychotechniczna.Model
+namespace PracowniaPsychotechniczna.Validator
 {
     public class BadanyValidatior : AbstractValidator<Badany>
     {

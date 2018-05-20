@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace PracowniaPsychotechniczna.Model
+namespace PracowniaPsychotechniczna.Validator
 {
     public class ValidationHelper
     {

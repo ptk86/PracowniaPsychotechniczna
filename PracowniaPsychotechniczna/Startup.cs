@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PracowniaPsychotechniczna.Dal;
 using PracowniaPsychotechniczna.Model;
+using PracowniaPsychotechniczna.Validator;
 
 namespace PracowniaPsychotechniczna
 {
@@ -31,6 +32,7 @@ namespace PracowniaPsychotechniczna
             
             services.AddTransient<IValidator<Badany>, BadanyValidatior>();
             services.AddTransient<IValidator<Firma>, FrimaValidatior>();
+            services.AddTransient<IValidator<Psycholog>, PsychologValidatior>();
 
             ValidatorOptions.LanguageManager.Culture = new CultureInfo("pl");
 
