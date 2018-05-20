@@ -24,6 +24,8 @@ namespace PracowniaPsychotechniczna.Dal
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
+
+            builder.Entity<Badany>().HasIndex(p => p.Pesel).IsUnique();
         }
 
         public DbSet<PracowniaPsychotechniczna.Model.Psycholog> Psycholog { get; set; }
@@ -31,5 +33,7 @@ namespace PracowniaPsychotechniczna.Dal
         public DbSet<PracowniaPsychotechniczna.Model.TypBadania> TypBadania { get; set; }
 
         public DbSet<PracowniaPsychotechniczna.Model.Firma> Firma { get; set; }
+
+        public DbSet<PracowniaPsychotechniczna.Model.Badany> Badany { get; set; }
     }
 }
