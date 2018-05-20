@@ -1,0 +1,46 @@
+﻿@page
+@model PracowniaPsychotechniczna.Pages.Badany.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Badany</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Badany.Imie)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Badany.Imie)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Badany.Nazwisko)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Badany.Nazwisko)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Badany.Pesel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Badany.Pesel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Badany.Adres)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Badany.Adres)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Badany.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
