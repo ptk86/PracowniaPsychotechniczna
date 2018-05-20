@@ -11,14 +11,16 @@ namespace PracowniaPsychotechniczna.Model
         {
             _context = context;
 
-            RuleFor(b => b.Nip).Must(IsNipValid).WithMessage("Nieprawidłowy NIP!");
+            RuleFor(b => b.Nazwa).NotEmpty();
+            RuleFor(b => b.Adres).NotEmpty();
+            RuleFor(b => b.Nip).NotEmpty();
+            RuleFor(b => b.Nip).Matches(@"^\d{10}$");
+            RuleFor(b => b.Nip).Must(IsNipChecksumValid).WithMessage("Nieprawidłowy NIP!");
         }
 
-        public bool IsNipValid(string nip)
+        public bool IsNipChecksumValid(string nip)
         {
-            return ValidationHelper.ValidateChecksum(nip, new [] { 6, 5, 7, 2, 3, 4, 5, 6, 7 });
+            return ValidationHelper.ValidateModuloChecksum(nip, new [] { 6, 5, 7, 2, 3, 4, 5, 6, 7 });
         }
-
-
     }
 }
