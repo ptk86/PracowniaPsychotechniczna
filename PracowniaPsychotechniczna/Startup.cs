@@ -33,6 +33,7 @@ namespace PracowniaPsychotechniczna
             services.AddTransient<IValidator<Badany>, BadanyValidatior>();
             services.AddTransient<IValidator<Firma>, FrimaValidatior>();
             services.AddTransient<IValidator<Psycholog>, PsychologValidatior>();
+            services.AddTransient<IValidator<TypBadania>, TypBadaniaValidator>();
 
             ValidatorOptions.LanguageManager.Culture = new CultureInfo("pl");
 
