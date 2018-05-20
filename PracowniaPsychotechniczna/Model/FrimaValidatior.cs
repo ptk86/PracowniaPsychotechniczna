@@ -11,7 +11,7 @@ namespace PracowniaPsychotechniczna.Model
         {
             _context = context;
 
-            RuleFor(b => b.Nip).Must(IsNipValid).WithMessage("Nieprawidłowy PESEL!");
+            RuleFor(b => b.Nip).Must(IsNipValid).WithMessage("Nieprawidłowy NIP!");
         }
 
         public bool IsNipValid(string nip)
