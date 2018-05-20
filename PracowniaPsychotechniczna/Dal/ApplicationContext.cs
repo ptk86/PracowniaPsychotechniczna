@@ -26,6 +26,7 @@ namespace PracowniaPsychotechniczna.Dal
             // Add your customizations after calling base.OnModelCreating(builder);
 
             builder.Entity<Badany>().HasIndex(p => p.Pesel).IsUnique();
+            builder.Entity<Firma>().HasIndex(p => p.Nip).IsUnique();
         }
 
         public DbSet<PracowniaPsychotechniczna.Model.Psycholog> Psycholog { get; set; }
