@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace PracowniaPsychotechniczna.Model
+﻿namespace PracowniaPsychotechniczna.Model
 {
     public class Firma
     {

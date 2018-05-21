@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PracowniaPsychotechniczna.Dal;
 using PracowniaPsychotechniczna.Model;
@@ -13,9 +10,9 @@ namespace PracowniaPsychotechniczna.Pages.Frima
 {
     public class EditModel : PageModel
     {
-        private readonly PracowniaPsychotechniczna.Dal.ApplicationContext _context;
+        private readonly ApplicationContext _context;
 
-        public EditModel(PracowniaPsychotechniczna.Dal.ApplicationContext context)
+        public EditModel(ApplicationContext context)
         {
             _context = context;
         }

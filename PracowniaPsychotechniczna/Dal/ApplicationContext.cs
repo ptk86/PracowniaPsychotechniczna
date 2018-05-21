@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PracowniaPsychotechniczna.Model;
 
 namespace PracowniaPsychotechniczna.Dal
@@ -29,12 +23,12 @@ namespace PracowniaPsychotechniczna.Dal
             builder.Entity<Firma>().HasIndex(p => p.Nip).IsUnique();
         }
 
-        public DbSet<PracowniaPsychotechniczna.Model.Psycholog> Psycholog { get; set; }
+        public DbSet<Psycholog> Psycholog { get; set; }
 
-        public DbSet<PracowniaPsychotechniczna.Model.TypBadania> TypBadania { get; set; }
+        public DbSet<TypBadania> TypBadania { get; set; }
 
-        public DbSet<PracowniaPsychotechniczna.Model.Firma> Firma { get; set; }
+        public DbSet<Firma> Firma { get; set; }
 
-        public DbSet<PracowniaPsychotechniczna.Model.Badany> Badany { get; set; }
+        public DbSet<Badany> Badany { get; set; }
     }
 }
