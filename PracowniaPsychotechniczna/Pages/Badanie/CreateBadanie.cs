@@ -15,7 +15,6 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
         public int PsychologId { get; set; }
         [DisplayName("Typ Badania")]
         public int TypBadaniaId { get; set; }
-        [Range(1,int.MaxValue)]
         public int BadanyId { get; set; }
         [DisplayName("Firma")]
         public int FirmaId { get; set; }
