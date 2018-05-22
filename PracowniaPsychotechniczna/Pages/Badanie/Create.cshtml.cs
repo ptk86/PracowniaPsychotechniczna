@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PracowniaPsychotechniczna.Dal;
@@ -16,20 +17,39 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
 
         public IActionResult OnGet()
         {
+            Badanie = new CreateBadanieViewModel
+            {
+                Psychologowie = _context.Psycholog,
+                TypyBadan = _context.TypBadania
+            };
             return Page();
         }
 
         [BindProperty]
-        public Model.Badanie Badanie { get; set; }
+        public CreateBadanieViewModel Badanie { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
+                Badanie = new CreateBadanieViewModel
+                {
+                    Psychologowie = _context.Psycholog,
+                    TypyBadan = _context.TypBadania
+                };
                 return Page();
             }
 
-            _context.Badanies.Add(Badanie);
+            var badanie = new Model.Badanie
+            {
+                TypBadaniaId = Badanie.TypBadaniaId,
+                PsychologId = Badanie.PsychologId,
+                DataBadania = DateTime.Now,
+                BadanyId = Badanie.BadanyId,
+                FrimaBadanegoId = Badanie.BadanyId
+            };
+
+            _context.Badanies.Add(badanie);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

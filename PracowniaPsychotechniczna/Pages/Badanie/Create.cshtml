@@ -14,9 +14,28 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Badanie.DataBadania" class="control-label"></label>
-                <input asp-for="Badanie.DataBadania" class="form-control" />
-                <span asp-validation-for="Badanie.DataBadania" class="text-danger"></span>
+                <label asp-for="Badanie.TypBadaniaId" class="control-label"></label>
+                @Html.DropDownListFor(x => @Model.Badanie.TypBadaniaId, new SelectList(@Model.Badanie.TypyBadan, "Id", "Nazwa"), htmlAttributes: new { @class = "form-control", id = "TypBadania" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Badanie.PsychologId" class="control-label"></label>
+                @Html.DropDownListFor(x => @Model.Badanie.PsychologId, new SelectList(@Model.Badanie.Psychologowie, "Id", "ImieINazwisko"), htmlAttributes: new { @class = "form-control", id = "Psycholog" })
+            </div>
+            <div class="form-group">
+                <label for="Badany" class="control-label">Badany</label>
+                <input id="Badany" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Badanie.BadanyId" />
+                <span asp-validation-for="Badanie.BadanyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Firma" class="control-label">Firma</label>
+                <input id="Firma" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Badanie.FirmaId" />
+                <span asp-validation-for="Badanie.FirmaId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

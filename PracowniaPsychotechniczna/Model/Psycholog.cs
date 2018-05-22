@@ -8,5 +8,7 @@ namespace PracowniaPsychotechniczna.Model
         [DisplayName("Imię")]
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
+
+        public string ImieINazwisko => $"{Imie} {Nazwisko}";
     }
 }
