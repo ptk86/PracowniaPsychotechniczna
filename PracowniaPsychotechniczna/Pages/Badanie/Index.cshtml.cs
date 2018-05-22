@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -15,11 +16,27 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
             _context = context;
         }
 
-        public IList<Model.Badanie> Badanie { get;set; }
+        public IList<BadanieIndexListItem> Badania { get;set; }
 
         public async Task OnGetAsync()
         {
-            Badanie = await _context.Badanies.ToListAsync();
+            var badania = await _context.Badanies
+                                            .Include(b => b.Badany)
+                                            .Include(b => b.Psycholog)
+                                            .Include(b => b.TypBadania)
+                                            .Include(b => b.FirmaBadanie)
+                                                .ThenInclude(fb => fb.Firma)
+                                            .ToListAsync();
+
+            Badania = badania.Select(b => new BadanieIndexListItem
+            {
+                Id = b.Id,
+                Frima = b.FirmaBadanie?.Firma?.Nazwa,
+                TypBadania = b.TypBadania.Nazwa,
+                Nazwisko = b.Badany.Nazwisko,
+                Imie = b.Badany.Imie,
+                DataBadania = b.DataBadania
+            }).ToList();
         }
     }
 }

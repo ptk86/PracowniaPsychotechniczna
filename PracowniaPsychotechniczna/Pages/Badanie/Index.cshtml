@@ -14,20 +14,42 @@
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Badanie[0].DataBadania)
+                    @Html.DisplayNameFor(model => model.Badania[0].TypBadania)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Badania[0].DataBadania)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Badania[0].Imie)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Badania[0].Nazwisko)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Badania[0].Frima)
                 </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Badanie) {
+@foreach (var item in Model.Badania) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypBadania)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DataBadania)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                @Html.DisplayFor(modelItem => item.Imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwisko)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Frima)
+            </td>
+            <td>
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
