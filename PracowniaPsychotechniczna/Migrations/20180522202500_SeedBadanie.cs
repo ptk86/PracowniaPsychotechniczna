@@ -90,7 +90,6 @@ namespace PracowniaPsychotechniczna.Migrations
                 INSERT INTO PracowniaPsychologiczna.dbo.Badanie (Id, BadanyId, DataBadania, PsychologId, TypBadaniaId) VALUES ( 78, 7, '2018-05-15', 3, 1 );
                 INSERT INTO PracowniaPsychologiczna.dbo.Badanie (Id, BadanyId, DataBadania, PsychologId, TypBadaniaId) VALUES ( 79, 1, '2018-05-21', 1, 2 );
                 INSERT INTO PracowniaPsychologiczna.dbo.Badanie (Id, BadanyId, DataBadania, PsychologId, TypBadaniaId) VALUES ( 80, 29, '2018-05-21', 2, 3 );
-
                 SET IDENTITY_INSERT PracowniaPsychologiczna.dbo.Badanie OFF;
             ");
         }

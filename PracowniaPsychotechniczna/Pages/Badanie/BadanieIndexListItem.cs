@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace PracowniaPsychotechniczna.Pages.Badanie
 {
@@ -13,6 +14,7 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
         public string Nazwisko { get; set; }
         public string Frima { get; set; }
         [DisplayName("Data Badania")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DataBadania { get; set; }
     }
 }
