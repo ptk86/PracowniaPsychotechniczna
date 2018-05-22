@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PracowniaPsychotechniczna.Pages.Badanie
 {
-    public class CreateBadanieViewModel
+    public class CreateBadanie
     {
         public IEnumerable<Model.Psycholog> Psychologowie { get; set; }
         public IEnumerable<Model.TypBadania> TypyBadan { get; set; }

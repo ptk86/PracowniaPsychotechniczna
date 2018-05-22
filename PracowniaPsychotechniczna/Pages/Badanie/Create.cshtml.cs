@@ -17,7 +17,7 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
 
         public IActionResult OnGet()
         {
-            Badanie = new CreateBadanieViewModel
+            Badanie = new CreateBadanie
             {
                 Psychologowie = _context.Psycholog,
                 TypyBadan = _context.TypBadania
@@ -26,13 +26,13 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
         }
 
         [BindProperty]
-        public CreateBadanieViewModel Badanie { get; set; }
+        public CreateBadanie Badanie { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
-                Badanie = new CreateBadanieViewModel
+                Badanie = new CreateBadanie
                 {
                     Psychologowie = _context.Psycholog,
                     TypyBadan = _context.TypBadania
