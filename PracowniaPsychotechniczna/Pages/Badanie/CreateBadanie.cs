@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PracowniaPsychotechniczna.Pages.Badanie
 {
@@ -24,7 +19,7 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
         public string Badany { get; set; }
 
         [DisplayName("Firma")]
-        public int? FirmaId { get; set; }
+        public int FirmaId { get; set; }
         public string Frima { get; set; }
 
         [DisplayName("Płatność własna?")]

@@ -48,7 +48,7 @@
         $("#Badanie_Frima_FormGroup").slideToggle({
             duration: 200
         });
-        $("#Badanie_FirmaId").val(null);
-        $("#Firma").val(null);
+        $("#Badanie_FirmaId").val(0);
+        $("#Firma").val("");
     });
 });

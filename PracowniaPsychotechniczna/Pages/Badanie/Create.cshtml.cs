@@ -25,7 +25,8 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
             Badanie = new CreateBadanie
             {
                 Psychologowie = _context.Psycholog,
-                TypyBadan = _context.TypBadania
+                TypyBadan = _context.TypBadania,
+                FirmaId = 0
             };
             return Page();
         }
@@ -47,9 +48,13 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
                 TypBadaniaId = Badanie.TypBadaniaId,
                 PsychologId = Badanie.PsychologId,
                 DataBadania = DateTime.Now,
-                BadanyId = Badanie.BadanyId,
-                FirmaBadanie = new FirmaBadanie() { FirmaId = Badanie.FirmaId.Value }
+                BadanyId = Badanie.BadanyId
              };
+
+            if (!Badanie.CzyPlatnoscWlasna)
+            {
+                badanie.FirmaBadanie = new FirmaBadanie() { FirmaId = Badanie.FirmaId };
+            }
 
             _context.Badanies.Add(badanie);
             await _context.SaveChangesAsync();
