@@ -23,6 +23,8 @@ namespace PracowniaPsychotechniczna.Dal
             builder.Entity<FirmaBadanie>().HasKey(fb => new {fb.FirmaId, fb.BadanieId});
             builder.Entity<FirmaBadanie>().HasOne(fb => fb.Badanie).WithOne(b => b.FirmaBadanie);
             builder.Entity<FirmaBadanie>().HasOne(fb => fb.Firma).WithMany(b => b.FirmaBadanieList).HasForeignKey(fb => fb.FirmaId);
+
+            builder.Entity<Badanie>().ToTable("Badanie");
         }
 
         public DbSet<Psycholog> Psycholog { get; set; }
