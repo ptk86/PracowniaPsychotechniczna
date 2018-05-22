@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Immutable;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Extensions.Internal;
 using PracowniaPsychotechniczna.Dal;
 using PracowniaPsychotechniczna.Model;
 
@@ -33,11 +37,8 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
         {
             if (!ModelState.IsValid)
             {
-                Badanie = new CreateBadanie
-                {
-                    Psychologowie = _context.Psycholog,
-                    TypyBadan = _context.TypBadania
-                };
+                Badanie.Psychologowie = _context.Psycholog;
+                Badanie.TypyBadan = _context.TypBadania;
                 return Page();
             }
 
@@ -47,7 +48,7 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
                 PsychologId = Badanie.PsychologId,
                 DataBadania = DateTime.Now,
                 BadanyId = Badanie.BadanyId,
-                FirmaBadanie = new FirmaBadanie() { FirmaId = Badanie.FirmaId }
+                FirmaBadanie = new FirmaBadanie() { FirmaId = Badanie.FirmaId.Value }
              };
 
             _context.Badanies.Add(badanie);

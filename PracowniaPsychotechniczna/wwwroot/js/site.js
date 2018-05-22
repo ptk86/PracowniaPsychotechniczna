@@ -1,5 +1,5 @@
 ﻿$(document).ready(function() {
-    $("#Badany").autocomplete({
+    $("#Badanie_Badany").autocomplete({
         source: function(request, response) {
             $.ajax({
                 url: "http://localhost:61903/api/autocomplete/badani?searchTerm=" + request.term,
@@ -22,7 +22,7 @@
     });
 
 
-    $("#Firma").autocomplete({
+    $("#Badanie_Frima").autocomplete({
         source: function (request, response) {
             $.ajax({
                 url: "http://localhost:61903/api/autocomplete/firmy?searchTerm=" + request.term,
@@ -42,5 +42,13 @@
         select: function (event, ui) {
             $("#Badanie_FirmaId").val(ui.item.id);
         }
+    });
+
+    $("#Badanie_CzyPlatnoscWlasna").change(function() {
+        $("#Badanie_Frima_FormGroup").slideToggle({
+            duration: 200
+        });
+        $("#Badanie_FirmaId").val(null);
+        $("#Firma").val(null);
     });
 });

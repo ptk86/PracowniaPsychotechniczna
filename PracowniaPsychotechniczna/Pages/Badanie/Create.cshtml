@@ -22,8 +22,9 @@
                 @Html.DropDownListFor(x => @Model.Badanie.PsychologId, new SelectList(@Model.Badanie.Psychologowie, "Id", "ImieINazwisko"), htmlAttributes: new { @class = "form-control", id = "Psycholog" })
             </div>
             <div class="form-group">
-                <label for="Badany" class="control-label">Badany</label>
-                <input id="Badany" class="form-control" />
+                <label asp-for="Badanie.Badany" class="control-label"></label>
+                <input asp-for="Badanie.Badany" class="form-control" />
+                <span asp-validation-for="Badanie.Badany" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="hidden" asp-for="Badanie.BadanyId" />
@@ -31,14 +32,27 @@
             </div>
             <div class="form-group">
                 <label asp-for="Badanie.CzyPlatnoscWlasna" class="control-label"></label>
-                @Html.CheckBoxFor(x => x.Badanie.CzyPlatnoscWlasna, new { @class = "from-control" });
-                @*<input asp-for="Badanie.CzyPlatnoscWlasna" class="form-control" />*@
+                @Html.CheckBoxFor(x => x.Badanie.CzyPlatnoscWlasna, new { @class = "from-control"})
                 <span asp-validation-for="Badanie.CzyPlatnoscWlasna" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label for="Firma" class="control-label">Firma</label>
-                <input id="Firma" class="form-control" />
-            </div>
+         
+            @if (@Model.Badanie.CzyPlatnoscWlasna)
+            {
+                <div class="form-group" id="Badanie_Frima_FormGroup" style="display: none">
+                    <label asp-for="Badanie.Frima" class="control-label"></label>
+                    <input asp-for="Badanie.Frima" class="form-control" />
+                    <span asp-validation-for="Badanie.Frima" class="text-danger"></span>
+                </div>
+            }
+            else
+            {
+                <div class="form-group" id="Badanie_Frima_FormGroup">
+                    <label asp-for="Badanie.Frima" class="control-label"></label>
+                    <input asp-for="Badanie.Frima" class="form-control" />
+                    <span asp-validation-for="Badanie.Frima" class="text-danger"></span>
+                </div>
+            }
+
             <div class="form-group">
                 <input type="hidden" asp-for="Badanie.FirmaId" />
                 <span asp-validation-for="Badanie.FirmaId" class="text-danger"></span>
