@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace PracowniaPsychotechniczna.Model
@@ -11,8 +12,7 @@ namespace PracowniaPsychotechniczna.Model
         public Badany Badany { get; set; }
         public int BadanyId { get; set; }
 
-        public Firma FrimaBadanego { get; set; }
-        public int FrimaBadanegoId { get; set; }
+        public FirmaBadanie FirmaBadanie { get; set; }
 
         [Required]
         public DateTime DataBadania { get; set; }

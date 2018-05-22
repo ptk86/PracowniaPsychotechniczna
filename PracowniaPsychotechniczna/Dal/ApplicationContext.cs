@@ -15,12 +15,14 @@ namespace PracowniaPsychotechniczna.Dal
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
-
+            
             builder.Entity<Badany>().HasIndex(p => p.Pesel).IsUnique();
+
             builder.Entity<Firma>().HasIndex(p => p.Nip).IsUnique();
+
+            builder.Entity<FirmaBadanie>().HasKey(fb => new {fb.FirmaId, fb.BadanieId});
+            builder.Entity<FirmaBadanie>().HasOne(fb => fb.Badanie).WithOne(b => b.FirmaBadanie);
+            builder.Entity<FirmaBadanie>().HasOne(fb => fb.Firma).WithMany(b => b.FirmaBadanieList).HasForeignKey(fb => fb.FirmaId);
         }
 
         public DbSet<Psycholog> Psycholog { get; set; }

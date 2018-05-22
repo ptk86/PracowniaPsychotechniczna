@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PracowniaPsychotechniczna.Dal;
+using PracowniaPsychotechniczna.Model;
 
 namespace PracowniaPsychotechniczna.Pages.Badanie
 {
@@ -46,8 +47,8 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
                 PsychologId = Badanie.PsychologId,
                 DataBadania = DateTime.Now,
                 BadanyId = Badanie.BadanyId,
-                FrimaBadanegoId = Badanie.BadanyId
-            };
+                FirmaBadanie = new FirmaBadanie() { FirmaId = Badanie.FirmaId }
+             };
 
             _context.Badanies.Add(badanie);
             await _context.SaveChangesAsync();
