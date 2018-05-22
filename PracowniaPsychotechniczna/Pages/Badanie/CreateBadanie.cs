@@ -18,5 +18,7 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
         public int BadanyId { get; set; }
         [DisplayName("Firma")]
         public int FirmaId { get; set; }
+        [DisplayName("Płatność własna?")]
+        public bool CzyPlatnoscWlasna { get; set; }
     }
 }

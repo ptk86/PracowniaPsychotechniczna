@@ -30,6 +30,12 @@
                 <span asp-validation-for="Badanie.BadanyId" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Badanie.CzyPlatnoscWlasna" class="control-label"></label>
+                @Html.CheckBoxFor(x => x.Badanie.CzyPlatnoscWlasna, new { @class = "from-control" });
+                @*<input asp-for="Badanie.CzyPlatnoscWlasna" class="form-control" />*@
+                <span asp-validation-for="Badanie.CzyPlatnoscWlasna" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label for="Firma" class="control-label">Firma</label>
                 <input id="Firma" class="form-control" />
             </div>
