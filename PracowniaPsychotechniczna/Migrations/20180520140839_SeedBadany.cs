@@ -45,7 +45,7 @@ namespace PracowniaPsychotechniczna.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql(@"
-              DELETE FROM PracowniaPsychologiczna.dbo.bADANY;
+              DELETE FROM PracowniaPsychologiczna.dbo.Badany;
             ");
 
         }
