@@ -1,5 +1,7 @@
 
 using System.Globalization;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -10,8 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using PracowniaPsychotechniczna.Dal;
 using PracowniaPsychotechniczna.Model;
 using PracowniaPsychotechniczna.Pages.Badanie;
+using PracowniaPsychotechniczna.Services;
 using PracowniaPsychotechniczna.Validator;
-using Rotativa.AspNetCore;
 
 namespace PracowniaPsychotechniczna
 {
@@ -37,7 +39,10 @@ namespace PracowniaPsychotechniczna
             services.AddTransient<IValidator<Psycholog>, PsychologValidatior>();
             services.AddTransient<IValidator<TypBadania>, TypBadaniaValidator>();
             services.AddTransient<IValidator<CreateBadanie>, CreateBadanieValidator>();
-            
+            services.AddTransient<IViewRenderService, ViewRenderService > ();
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+
+
             ValidatorOptions.LanguageManager.Culture = new CultureInfo("pl");
 
         }
@@ -45,8 +50,6 @@ namespace PracowniaPsychotechniczna
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-
-            RotativaConfiguration.Setup(env);
 
             if (env.IsDevelopment())
             {

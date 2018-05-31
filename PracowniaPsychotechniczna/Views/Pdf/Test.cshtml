@@ -1,0 +1,114 @@
+﻿@using PracowniaPsychotechniczna.Pages.Faktura
+@model CreateFaktura
+
+<h2>Nowa Faktura</h2>
+<hr />
+<table style="width:80%">
+    <tr>
+        <th>Sprzedawca</th>
+        <th>Nabywca</th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayTextFor(m => m.Sprzedawca.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayTextFor(m => m.Nabywca.Nazwa)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayTextFor(m => m.Sprzedawca.Adres)
+        </td>
+        <td>
+            @Html.DisplayTextFor(m => m.Nabywca.Adres)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayTextFor(m => m.Sprzedawca.Nip)
+        </td>
+        <td>
+            @Html.DisplayTextFor(m => m.Nabywca.Nip)
+        </td>
+    </tr>
+</table>
+<hr />
+<table style="width:80%">
+    <thead>
+        <tr>
+            <th>
+                Usługa
+            </th>
+            <th>
+            </th>
+            <th>
+            </th>
+            <th class="text-right">
+                @Html.DisplayNameFor(model => model.Badania[0].Cena)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Badania)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwisko)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Typ)
+                </td>
+                <td class="text-right">
+                    @Html.DisplayFor(modelItem => item.Cena),00 zł
+                </td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right">
+                --------------
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right">
+                @Html.DisplayFor(modelItem => modelItem.Suma),00 zł
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right">
+                Słownie:  @Model.SumeSlownie
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<hr />
+<div>
+    Termin zapłaty:  @Model.TerminZaplaty.ToString("d")
+</div>
+<div>
+    Sposób zapłaty: przelew
+</div>
+<div>
+    Nr konta: 8888 88888 88888 88888 88888
+</div>
+<hr />
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
