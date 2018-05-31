@@ -11,9 +11,10 @@ using System;
 namespace PracowniaPsychotechniczna.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20180531004841_SeedFirmaBadanie")]
+    partial class SeedFirmaBadanie
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
