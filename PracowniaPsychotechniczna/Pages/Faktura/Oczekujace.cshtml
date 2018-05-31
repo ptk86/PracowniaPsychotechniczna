@@ -1,0 +1,43 @@
+﻿@page
+@model OczekujaceModel
+
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OczekujaceDoZafakturowania[0].NazwaFirmy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OczekujaceDoZafakturowania[0].LiczbaBadan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OczekujaceDoZafakturowania[0].CalkowityKosztBadan)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.OczekujaceDoZafakturowania) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazwaFirmy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LiczbaBadan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalkowityKosztBadan)
+            </td>
+            <td>
+                <a asp-page="./CreateFaktura" asp-route-id="@item.Id">Fakturuj</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
