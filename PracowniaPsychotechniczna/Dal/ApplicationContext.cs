@@ -10,7 +10,7 @@ namespace PracowniaPsychotechniczna.Dal
         {
         }
 
-        public DbSet<Badanie> Badanies { get; set; }
+        public DbSet<Badanie> Badanie { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -24,6 +24,10 @@ namespace PracowniaPsychotechniczna.Dal
             builder.Entity<FirmaBadanie>().HasOne(fb => fb.Badanie).WithOne(b => b.FirmaBadanie);
             builder.Entity<FirmaBadanie>().HasOne(fb => fb.Firma).WithMany(b => b.FirmaBadanieList).HasForeignKey(fb => fb.FirmaId);
 
+            builder.Entity<FakturaBadanie>().HasKey(fb => new {fb.FakturaId, fb.BadanieId});
+            builder.Entity<FakturaBadanie>().HasOne(fb => fb.Badanie).WithOne(b => b.FakturaBadanie);
+            builder.Entity<FakturaBadanie>().HasOne(fb => fb.Faktura).WithMany(b => b.FakturaBadanieList).HasForeignKey(fb => fb.FakturaId);
+
             builder.Entity<Badanie>().ToTable("Badanie");
         }
 
@@ -34,5 +38,8 @@ namespace PracowniaPsychotechniczna.Dal
         public DbSet<Firma> Firma { get; set; }
 
         public DbSet<Badany> Badany { get; set; }
+        public DbSet<FirmaBadanie> FirmaBadanie { get; set; }
+
+        public DbSet<PracowniaPsychotechniczna.Model.Faktura> Faktura { get; set; }
     }
 }
