@@ -25,7 +25,7 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
                 return NotFound();
             }
 
-            Badanie = await _context.Badanies.SingleOrDefaultAsync(m => m.Id == id);
+            Badanie = await _context.Badanie.SingleOrDefaultAsync(m => m.Id == id);
 
             if (Badanie == null)
             {
@@ -41,11 +41,11 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
                 return NotFound();
             }
 
-            Badanie = await _context.Badanies.FindAsync(id);
+            Badanie = await _context.Badanie.FindAsync(id);
 
             if (Badanie != null)
             {
-                _context.Badanies.Remove(Badanie);
+                _context.Badanie.Remove(Badanie);
                 await _context.SaveChangesAsync();
             }
 

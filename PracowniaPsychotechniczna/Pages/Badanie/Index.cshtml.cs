@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using PracowniaPsychotechniczna.Dal;
@@ -20,7 +21,7 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
 
         public async Task OnGetAsync()
         {
-            var badania = await _context.Badanies
+            var badania = await _context.Badanie
                                             .Include(b => b.Badany)
                                             .Include(b => b.Psycholog)
                                             .Include(b => b.TypBadania)

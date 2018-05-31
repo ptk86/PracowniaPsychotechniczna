@@ -31,7 +31,7 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
             return Page();
         }
 
-        [BindProperty]
+       [BindProperty]
         public CreateBadanie Badanie { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
@@ -56,7 +56,7 @@ namespace PracowniaPsychotechniczna.Pages.Badanie
                 badanie.FirmaBadanie = new FirmaBadanie() { FirmaId = Badanie.FirmaId };
             }
 
-            _context.Badanies.Add(badanie);
+            _context.Badanie.Add(badanie);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
