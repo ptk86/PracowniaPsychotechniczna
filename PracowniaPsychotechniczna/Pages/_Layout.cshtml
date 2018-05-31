@@ -32,11 +32,29 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/Psycholog/Index">Psychologowie</a></li>
-                    <li><a asp-page="/TypBadania/Index">Typy Badań</a></li>
-                    <li><a asp-page="/Firma/Index">Firmy</a></li>
-                    <li><a asp-page="/Badany/Index">Badani</a></li>
-                    <li><a asp-page="/Badanie/Index">Badania</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rejestracja<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-page="/Badanie/Index">Badania</a></li>
+                            <li><a asp-page="/Badany/Index">Badani</a></li>
+                            <li><a asp-page="/Firma/Index">Firmy</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Faktury<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-page="/Faktura/Index">Wystawione</a></li>
+                            <li><a asp-page="/Faktura/Oczekujace">Oczekujace</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zarządzanie<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-page="/Psycholog/Index">Psychologowie</a></li>
+                            <li><a asp-page="/TypBadania/Index">Typy Badań</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
         </div>
