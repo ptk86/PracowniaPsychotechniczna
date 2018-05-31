@@ -40,6 +40,6 @@ namespace PracowniaPsychotechniczna.Dal
         public DbSet<Badany> Badany { get; set; }
         public DbSet<FirmaBadanie> FirmaBadanie { get; set; }
 
-        public DbSet<PracowniaPsychotechniczna.Model.Faktura> Faktura { get; set; }
+        public DbSet<Faktura> Faktura { get; set; }
     }
 }
