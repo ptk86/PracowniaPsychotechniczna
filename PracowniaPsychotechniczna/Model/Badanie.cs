@@ -12,8 +12,6 @@ namespace PracowniaPsychotechniczna.Model
         public Badany Badany { get; set; }
         public int BadanyId { get; set; }
 
-        public FirmaBadanie FirmaBadanie { get; set; }
-
         [Required]
         public DateTime DataBadania { get; set; }
 
@@ -24,5 +22,8 @@ namespace PracowniaPsychotechniczna.Model
         [Required]
         public Psycholog Psycholog { get; set; }
         public int PsychologId { get; set; }
+
+        public FirmaBadanie FirmaBadanie { get; set; }
+        public FakturaBadanie FakturaBadanie { get; set; }
     }
 }
