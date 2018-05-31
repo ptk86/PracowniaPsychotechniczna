@@ -5,14 +5,24 @@
   <ItemGroup>
     <Compile Remove="Migrations\20180522192449_ChangeTableNameForBadanieClass.cs" />
     <Compile Remove="Migrations\20180522192449_ChangeTableNameForBadanieClass.Designer.cs" />
+    <Compile Remove="Migrations\20180527082428_Test.cs" />
+    <Compile Remove="Migrations\20180527082428_Test.Designer.cs" />
+    <Compile Remove="Migrations\20180527082602_Test.cs" />
+    <Compile Remove="Migrations\20180527082602_Test.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="DinkToPdfIncludesDependencies" Version="1.0.8" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="7.5.2" />
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
-    <PackageReference Include="Rotativa.AspNetCore" Version="1.0.6" />
+    <PackageReference Include="LiczbyNaSlowaNetCore" Version="1.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="libwkhtmltox.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
