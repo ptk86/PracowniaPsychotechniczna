@@ -26,32 +26,8 @@ namespace PracowniaPsychotechniczna.Controller
             _renderService = renderService;
         }
 
-        [HttpGet("faktura")]
-        public IActionResult Faktura()
-        {
-            var doc = new HtmlToPdfDocument()
-            {
-                GlobalSettings = {
-                    PaperSize = PaperKind.A3,
-                    Orientation = Orientation.Landscape,
-                },
-
-                Objects = {
-                   new ObjectSettings()
-                    {
-                        Page = "https://github.com/",
-
-                    }
-                }
-            };
-
-            var pdf = _pdfConverter.Convert(doc);
-
-            return new FileContentResult(pdf, "aplication/pdf");
-        }
-
-        [HttpGet("Test")]
-        public async Task<IActionResult> Test(int id)
+        [HttpGet("FakturaPdf")]
+        public async Task<IActionResult> FakturaPdf(int id)
         {
             var firma = _context.Firma.Include(f => f.FirmaBadanieList)
                 .ThenInclude(fb => fb.Badanie)
@@ -61,7 +37,7 @@ namespace PracowniaPsychotechniczna.Controller
                 .ThenInclude(fb => fb.TypBadania)
                 .FirstOrDefault(f => f.Id == id);
 
-            var faktura = new CreateFaktura
+            var faktura = new FakturaDetail
             {
                 Sprzedawca = new Firma
                 {
@@ -86,17 +62,12 @@ namespace PracowniaPsychotechniczna.Controller
                 }).OrderByDescending(b => b.Cena).ToList()
             };
 
-            var htmlString = await _renderService.RenderToStringAsync("Pdf/Test", faktura);
+            var htmlString = await _renderService.RenderToStringAsync("Pdf/Faktura", faktura);
 
-            var doc = new HtmlToPdfDocument()
+            var doc = new HtmlToPdfDocument
             {
-                GlobalSettings = {
-                    PaperSize = PaperKind.A3,
-                    Orientation = Orientation.Landscape,
-                },
-
                 Objects = {
-                    new ObjectSettings()
+                    new ObjectSettings
                     {
                         HtmlContent = htmlString,
                         WebSettings = new WebSettings
