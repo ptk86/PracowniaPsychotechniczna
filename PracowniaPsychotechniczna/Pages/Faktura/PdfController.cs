@@ -1,18 +1,15 @@
-﻿
-using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using DinkToPdf;
 using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PracowniaPsychotechniczna.Dal;
-using PracowniaPsychotechniczna.Pages.Faktura;
 using PracowniaPsychotechniczna.Services;
 
-namespace PracowniaPsychotechniczna.Controller
+namespace PracowniaPsychotechniczna.Pages.Faktura
 {
-    [Route("api/pdf")]
+    [Route("faktura")]
     public class PdfController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly IConverter _pdfConverter;
@@ -26,7 +23,7 @@ namespace PracowniaPsychotechniczna.Controller
             _renderService = renderService;
         }
 
-        [HttpGet("FakturaPdf")]
+        [HttpGet("pdf")]
         public async Task<IActionResult> FakturaPdf(int id)
         {
             var firma = _context.Firma.Include(f => f.FirmaBadanieList)
