@@ -2,12 +2,10 @@
 @model CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nowe badanie";
 }
 
-<h2>Create</h2>
-
-<h4>Badanie</h4>
+<h2>Nowe badanie</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -32,10 +30,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Badanie.CzyPlatnoscWlasna" class="control-label"></label>
-                @Html.CheckBoxFor(x => x.Badanie.CzyPlatnoscWlasna, new { @class = "from-control"})
+                @Html.CheckBoxFor(x => x.Badanie.CzyPlatnoscWlasna, new { @class = "from-control" })
                 <span asp-validation-for="Badanie.CzyPlatnoscWlasna" class="text-danger"></span>
             </div>
-         
+
             @if (@Model.Badanie.CzyPlatnoscWlasna)
             {
                 <div class="form-group" id="Badanie_Frima_FormGroup" style="display: none">
@@ -58,14 +56,14 @@
                 <span asp-validation-for="Badanie.FirmaId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Potwierdź" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Powrót do listy</a>
 </div>
 
 @section Scripts {

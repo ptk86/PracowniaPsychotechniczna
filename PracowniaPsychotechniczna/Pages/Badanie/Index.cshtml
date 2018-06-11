@@ -2,57 +2,58 @@
 @model IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Badania";
 }
 
-<h2>Index</h2>
+<h2>Badania</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Nowe</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Badania[0].TypBadania)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Badania[0].DataBadania)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Badania[0].Imie)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Badania[0].Nazwisko)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Badania[0].Frima)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Badania[0].TypBadania)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Badania[0].DataBadania)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Badania[0].Imie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Badania[0].Nazwisko)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Badania[0].Frima)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Badania) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypBadania)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataBadania)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Imie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nazwisko)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Frima)
-            </td>
-            <td>
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Badania)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypBadania)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataBadania)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwisko)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Frima)
+                </td>
+                <td>
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Usuń</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
