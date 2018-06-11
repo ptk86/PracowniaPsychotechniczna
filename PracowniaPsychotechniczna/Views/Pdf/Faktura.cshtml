@@ -1,0 +1,129 @@
+﻿@using PracowniaPsychotechniczna.Pages.Faktura
+@model FakturaDetail
+
+
+<!DOCTYPE html>
+<html style="width: 850px; height: 800px">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Faktura</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .column_500 {
+            width: 500px;
+            display: inline-block;
+        }
+
+        .column_200 {
+            width: 200px;
+            display: inline-block;
+        }
+
+        .column_300 {
+            width: 300px;
+            display: inline-block;
+        }
+
+        .column {
+            width: auto;
+            display: inline-block;
+        }
+
+        .price {
+            text-align: right;
+            width: 60px;
+            display: inline-block;
+        }
+
+        .distinguish {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 120%;
+        }
+
+        .label {
+            text-align: right;
+            font-weight: bold
+        }
+
+        div {
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body style="border: 1px solid rgb(89, 102, 83); height: 100%">
+    <div style="text-align: center">
+        <h2>Faktura nr: </h2>
+    </div>
+    <div>
+        <div class="column_500">
+            <div class="distinguish">Sprzedawca:</div>
+            <div>CBMP Piotr Kiliński</div>
+            <div>ul. Irzykowskiego 3 m 24, 42-217 Częstochowa</div>
+            <div>NIP: 9492000541</div>
+        </div>
+        <div class="column">
+            <div class="distinguish">Nabywca:</div>
+            <div>Wójcik Ltd</div>
+            <div>ul. Popiełuszki Jerzego 99/81, 18-791 Łomża</div>
+            <div>NIP: 1332851214</div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div class="column_200 distinguish">Usługa:</div>
+            <div class="column_300" style="visibility: hidden"></div>
+            <div class="column_300 distinguish">Cena:</div>
+        </div>
+        <div>
+            <div class="column_200">Genowefa Major</div>
+            <div class="column_300">Pozwolenie na Bron</div>
+            <div class="column_300">250,00 zł</div>
+        </div>
+        <div>
+            <div class="column_200">Wiecesław Moch</div>
+            <div class="column_300">Po odebraniu prawa jazy - punkty</div>
+            <div class="column_300">200,00 zł</div>
+        </div>
+        <div>
+            <div class="column_200">Oleg Staszak</div>
+            <div class="column_300">Kierowca powyżej 3,5 t</div>
+            <div class="column_300">150,00 zł</div>
+        </div>
+        <div>
+            <div class="column_200">Wiecesław Moch</div>
+            <div class="column_300">Wózek widłowy</div>
+            <div class="column_300">60,00 zł</div>
+        </div>
+    </div>
+    <div>
+        <div class="column_500 label">Suma:</div>
+        <div class="column" style="border-top: 1px dashed black">660,00 zł</div>
+    </div>
+    <div>
+        <div class="column_500 label">Słownie:</div>
+        <div class="column">szescset szescdziesiat zlotych</div>
+    </div>
+    <div>
+        <div class="column_500 label">Termin zapłaty:</div>
+        <div class="column">13.06.2018</div>
+    </div>
+    <div>
+        <div class="column_500 label">Sposób płatności:</div>
+        <div class="column">przelew</div>
+    </div>
+    <div>
+        <div class="column_500 label">Nr konta:</div>
+        <div class="column">8888 88888 88888 88888 88888</div>
+    </div>
+
+</body>
+
+</html>
