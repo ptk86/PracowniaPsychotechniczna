@@ -2,12 +2,10 @@
 @model CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nowy badany";
 }
 
-<h2>Create</h2>
-
-<h4>Badany</h4>
+<h2>Nowy badany</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -34,14 +32,14 @@
                 <span asp-validation-for="Badany.Adres" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Potwierdź" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Powrót do listy</a>
 </div>
 
 @section Scripts {
