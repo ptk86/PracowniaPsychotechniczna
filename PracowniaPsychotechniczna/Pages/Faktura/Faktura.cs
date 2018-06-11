@@ -12,6 +12,8 @@ namespace PracowniaPsychotechniczna.Pages.Faktura
         {
             Badania = new List<Badanie>();
         }
+
+        public int Id { get; set; }
         public Firma Sprzedawca { get; set; }
         public Firma Nabywca { get; set; }
         public DateTime DateTime { get; set; }

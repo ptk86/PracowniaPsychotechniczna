@@ -37,7 +37,7 @@ namespace PracowniaPsychotechniczna.Pages.Faktura
                                             LiczbaBadan = f.FakturaBadanieList.Count,
                                             CalkowityKosztBadan = f.FakturaBadanieList.Sum(fb => fb.Badanie.TypBadania.Cena)
                                         })
-                                    .OrderByDescending(dz => dz.CalkowityKosztBadan).ToList();
+                                    .OrderByDescending(dz => dz.Id).ToList();
 
             return Page();
         }

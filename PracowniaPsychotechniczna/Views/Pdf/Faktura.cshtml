@@ -60,60 +60,48 @@
 
 <body style="border: 1px solid rgb(89, 102, 83); height: 100%">
     <div style="text-align: center">
-        <h2>Faktura nr: </h2>
+        <h2>Faktura Nr. @Model.Id</h2>
     </div>
     <div>
         <div class="column_500">
             <div class="distinguish">Sprzedawca:</div>
-            <div>CBMP Piotr Kiliński</div>
-            <div>ul. Irzykowskiego 3 m 24, 42-217 Częstochowa</div>
-            <div>NIP: 9492000541</div>
+            <div>@Model.Sprzedawca.Nazwa</div>
+            <div>@Model.Sprzedawca.Adres</div>
+            <div>@Model.Sprzedawca.Nip</div>
         </div>
         <div class="column">
             <div class="distinguish">Nabywca:</div>
-            <div>Wójcik Ltd</div>
-            <div>ul. Popiełuszki Jerzego 99/81, 18-791 Łomża</div>
-            <div>NIP: 1332851214</div>
+            <div>@Model.Nabywca.Nazwa</div>
+            <div>@Model.Nabywca.Adres</div>
+            <div>@Model.Nabywca.Nip</div>
         </div>
     </div>
+<div>
     <div>
-        <div>
-            <div class="column_200 distinguish">Usługa:</div>
-            <div class="column_300" style="visibility: hidden"></div>
-            <div class="column_300 distinguish">Cena:</div>
-        </div>
-        <div>
-            <div class="column_200">Genowefa Major</div>
-            <div class="column_300">Pozwolenie na Bron</div>
-            <div class="column_300">250,00 zł</div>
-        </div>
-        <div>
-            <div class="column_200">Wiecesław Moch</div>
-            <div class="column_300">Po odebraniu prawa jazy - punkty</div>
-            <div class="column_300">200,00 zł</div>
-        </div>
-        <div>
-            <div class="column_200">Oleg Staszak</div>
-            <div class="column_300">Kierowca powyżej 3,5 t</div>
-            <div class="column_300">150,00 zł</div>
-        </div>
-        <div>
-            <div class="column_200">Wiecesław Moch</div>
-            <div class="column_300">Wózek widłowy</div>
-            <div class="column_300">60,00 zł</div>
-        </div>
+        <div class="column_200 distinguish">Usługa:</div>
+        <div class="column_300" style="visibility: hidden"></div>
+        <div class="column_300 distinguish">Cena:</div>
     </div>
+    @foreach (var badanie in Model.Badania)
+    {
+        <div>
+            <div class="column_200">@badanie.Imie @badanie.Nazwisko</div>
+            <div class="column_300">@badanie.Typ</div>
+            <div class="column_300">@badanie.Cena,00 zł</div>
+        </div>
+    }
+</div>
     <div>
         <div class="column_500 label">Suma:</div>
-        <div class="column" style="border-top: 1px dashed black">660,00 zł</div>
+        <div class="column" style="border-top: 1px dashed black">@Model.Suma,00 zł</div>
     </div>
     <div>
         <div class="column_500 label">Słownie:</div>
-        <div class="column">szescset szescdziesiat zlotych</div>
+        <div class="column">@Model.SumeSlownie</div>
     </div>
     <div>
         <div class="column_500 label">Termin zapłaty:</div>
-        <div class="column">13.06.2018</div>
+        <div class="column">@Model.TerminZaplaty</div>
     </div>
     <div>
         <div class="column_500 label">Sposób płatności:</div>

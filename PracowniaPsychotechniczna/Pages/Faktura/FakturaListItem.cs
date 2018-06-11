@@ -4,9 +4,8 @@ namespace PracowniaPsychotechniczna.Pages.Faktura
 {
     public class FakturaListItem
     {
+        [DisplayName("Numer")]
         public int Id { get; set; }
-
-        public string NumerFaktury { get; set; }
 
         [DisplayName("Nazwa Firmy")]
         public string NazwaFirmy { get; set; }

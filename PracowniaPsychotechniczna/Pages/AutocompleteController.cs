@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PracowniaPsychotechniczna.Dal;
 
-namespace PracowniaPsychotechniczna.Controller
+namespace PracowniaPsychotechniczna.Pages
 {
     [Produces("application/json")]
     [Route("api/autocomplete")]

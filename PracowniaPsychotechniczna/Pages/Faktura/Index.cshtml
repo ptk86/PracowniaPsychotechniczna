@@ -2,29 +2,31 @@
 @model IndexModel
 
 
-<h2>Index</h2>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+<h2>Wystawione faktury</h2>
 <table class="table">
     <thead>
     <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Faktury[0].NazwaFirmy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Faktury[0].LiczbaBadan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Faktury[0].CalkowityKosztBadan)
-            </th>
-            <th></th>
-        </tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Faktury[0].Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Faktury[0].NazwaFirmy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Faktury[0].LiczbaBadan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Faktury[0].CalkowityKosztBadan)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Faktury) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NazwaFirmy)
             </td>
@@ -35,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.CalkowityKosztBadan)
             </td>
             <td>
-                <a asp-page="./CreateFaktura/" asp-route-id="@item.Id">Fakturuj</a>
+                <a asp-controller="Faktura" asp-action="Pdf" asp-route-fakturaid="@item.Id">Pdf</a>
             </td>
         </tr>
 }
