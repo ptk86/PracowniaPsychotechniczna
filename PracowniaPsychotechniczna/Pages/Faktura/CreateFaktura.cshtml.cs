@@ -34,7 +34,7 @@ namespace PracowniaPsychotechniczna.Pages.Faktura
                 return NotFound();
             }
 
-            CreateFaktura = new CreateFaktura
+            FakturaDetail = new FakturaDetail
             {
                 Sprzedawca = new Firma
                 {
@@ -63,7 +63,7 @@ namespace PracowniaPsychotechniczna.Pages.Faktura
         }
 
         [BindProperty]
-        public CreateFaktura CreateFaktura { get; set; }
+        public FakturaDetail FakturaDetail { get; set; }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {

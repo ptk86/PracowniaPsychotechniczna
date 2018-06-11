@@ -6,9 +6,9 @@ using LiczbyNaSlowaNETCore.Dictionaries;
 
 namespace PracowniaPsychotechniczna.Pages.Faktura
 {
-    public class CreateFaktura
+    public class FakturaDetail
     {
-        public CreateFaktura()
+        public FakturaDetail()
         {
             Badania = new List<Badanie>();
         }
