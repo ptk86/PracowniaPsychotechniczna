@@ -10,26 +10,26 @@
     </tr>
     <tr>
         <td>
-            @Html.DisplayTextFor(m => m.FakturaDetail.Sprzedawca.Nazwa)
+            @Html.DisplayTextFor(m => m.Faktura.Sprzedawca.Nazwa)
         </td>
         <td>
-            @Html.DisplayTextFor(m => m.FakturaDetail.Nabywca.Nazwa)
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.DisplayTextFor(m => m.FakturaDetail.Sprzedawca.Adres)
-        </td>
-        <td>
-            @Html.DisplayTextFor(m => m.FakturaDetail.Nabywca.Adres)
+            @Html.DisplayTextFor(m => m.Faktura.Nabywca.Nazwa)
         </td>
     </tr>
     <tr>
         <td>
-            @Html.DisplayTextFor(m => m.FakturaDetail.Sprzedawca.Nip)
+            @Html.DisplayTextFor(m => m.Faktura.Sprzedawca.Adres)
         </td>
         <td>
-            @Html.DisplayTextFor(m => m.FakturaDetail.Nabywca.Nip)
+            @Html.DisplayTextFor(m => m.Faktura.Nabywca.Adres)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayTextFor(m => m.Faktura.Sprzedawca.Nip)
+        </td>
+        <td>
+            @Html.DisplayTextFor(m => m.Faktura.Nabywca.Nip)
         </td>
     </tr>
 </table>
@@ -45,12 +45,12 @@
             <th>
             </th>
             <th class="text-right">
-                @Html.DisplayNameFor(model => model.FakturaDetail.Badania[0].Cena)
+                @Html.DisplayNameFor(model => model.Faktura.Badania[0].Cena)
             </th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.FakturaDetail.Badania)
+        @foreach (var item in Model.Faktura.Badania)
         {
             <tr>
                 <td>
@@ -80,7 +80,7 @@
             <td></td>
             <td></td>
             <td class="text-right">
-                @Html.DisplayFor(modelItem => modelItem.FakturaDetail.Suma),00 zł
+                @Html.DisplayFor(modelItem => modelItem.Faktura.Suma),00 zł
             </td>
         </tr>
         <tr>
@@ -88,7 +88,7 @@
             <td></td>
             <td></td>
             <td class="text-right">
-                Słownie:  @Model.FakturaDetail.SumeSlownie
+                Słownie:  @Model.Faktura.SumeSlownie
             </td>
         </tr>
 
@@ -96,7 +96,7 @@
 </table>
 <hr />
 <div>
-    Termin zapłaty:  @Model.FakturaDetail.TerminZaplaty.ToString("d")
+    Termin zapłaty:  @Model.Faktura.TerminZaplaty.ToString("d")
 </div>
 <div>
     Sposób zapłaty: przelew
@@ -109,7 +109,7 @@
     <form method="post">
         
         <div class="form-group">
-            <input type="hidden" asp-for="FakturaDetail.Nabywca.Id" class="form-control" />
+            <input type="hidden" asp-for="Faktura.Nabywca.Id" class="form-control" />
         </div> 
         <div class="form-group">
             <input type="submit" value="Fakturuj" class="btn btn-success" />

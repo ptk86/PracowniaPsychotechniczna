@@ -37,7 +37,7 @@ namespace PracowniaPsychotechniczna.Controller
                 .ThenInclude(fb => fb.TypBadania)
                 .FirstOrDefault(f => f.Id == id);
 
-            var faktura = new FakturaDetail
+            var faktura = new Faktura
             {
                 Sprzedawca = new Firma
                 {

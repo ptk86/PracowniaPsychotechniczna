@@ -19,7 +19,7 @@ namespace PracowniaPsychotechniczna.Pages.Faktura
             _context = context;
         }
 
-        public IList<Faktura> Faktury { get;set; }
+        public IList<FakturaListItem> Faktury { get;set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -30,7 +30,7 @@ namespace PracowniaPsychotechniczna.Pages.Faktura
                                             .ThenInclude(fb => fb.Badanie.TypBadania).ToListAsync();
             
             Faktury = faktury.Select(f =>
-                                        new Faktura
+                                        new FakturaListItem
                                         {
                                             Id = f.Id,
                                             NazwaFirmy = f.FakturaBadanieList.FirstOrDefault().Badanie.FirmaBadanie.Firma.Nazwa,
